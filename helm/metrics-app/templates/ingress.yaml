@@ -8,7 +8,7 @@ metadata:
 spec:
   ingressClassName: {{ .Values.ingress.className }}
   rules:
-    - host: {{ .Values.ingress.hosts[0].host }}
+    - host: {{ (index .Values.ingress.hosts 0).host }}
       http:
         paths:
           - path: /counter
